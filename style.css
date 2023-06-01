@@ -1,0 +1,51 @@
+*, ::before, ::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: #e9e9e9;
+    padding-top: 100px;
+}
+.container{
+    /* 
+        max-width: 600px, margin: 0 auto - pour le centrer - padding: 30px pour faire respirer
+    
+    */
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 10px; /* arrondir les ongles*/
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* souligner notre ouiii */
+}
+
+/* clearfix hack avec les elements block, forcer le container a prendre en compte la 
+hauteur de l'image */
+.container::after{
+    content: "";
+    display: block;
+    clear: both; /* force un element a se mettre apres un element flottant */
+}
+
+.container h2{
+    margin-bottom: 20px;
+}
+
+.container p{
+    line-height: 1.4; /* la hauteur des lignes: il faut qu'il soit visible*/
+}
+
+
+img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover; /* pour bien adapter l'image a la taille que je donne */
+    border-radius: 50%; /* arrondir l'image */
+    float: left;
+    shape-outside: margin-box; /* aller sur ... le coller autour a partir du margin */
+    margin: 0 20px 5px 0;  /* comportement flottant, s'il y a pas assez de texte il ne donne 
+    plus de hauteur a son parent */
+    /* flexbox froggy */
+    /* <a href="https://www.template.net/editable/job-descriptions">Job Description</a> */
+}
